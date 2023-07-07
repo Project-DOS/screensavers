@@ -56,7 +56,7 @@ export default ({ regl, config, lkg }) => {
 	};
 
 	const introDoubleBuffer = makeComputeDoubleBuffer(regl, 1, numColumns);
-	const rainPassIntro = loadText("shaders/glsl/rainPass.intro.frag.glsl");
+	const rainPassIntro = loadText("/matrix/shaders/glsl/rainPass.intro.frag.glsl");
 	const introUniforms = {
 		...commonUniforms,
 		...extractEntries(config, ["fallSpeed", "skipIntro"]),
@@ -72,7 +72,7 @@ export default ({ regl, config, lkg }) => {
 	});
 
 	const raindropDoubleBuffer = makeComputeDoubleBuffer(regl, numRows, numColumns);
-	const rainPassRaindrop = loadText("shaders/glsl/rainPass.raindrop.frag.glsl");
+	const rainPassRaindrop = loadText("/matrix/shaders/glsl/rainPass.raindrop.frag.glsl");
 	const raindropUniforms = {
 		...commonUniforms,
 		...extractEntries(config, ["brightnessDecay", "fallSpeed", "raindropLength", "loops", "skipIntro"]),
@@ -89,7 +89,7 @@ export default ({ regl, config, lkg }) => {
 	});
 
 	const symbolDoubleBuffer = makeComputeDoubleBuffer(regl, numRows, numColumns);
-	const rainPassSymbol = loadText("shaders/glsl/rainPass.symbol.frag.glsl");
+	const rainPassSymbol = loadText("/matrix/shaders/glsl/rainPass.symbol.frag.glsl");
 	const symbolUniforms = {
 		...commonUniforms,
 		...extractEntries(config, ["cycleSpeed", "cycleFrameSkip", "loops"]),
@@ -106,7 +106,7 @@ export default ({ regl, config, lkg }) => {
 	});
 
 	const effectDoubleBuffer = makeComputeDoubleBuffer(regl, numRows, numColumns);
-	const rainPassEffect = loadText("shaders/glsl/rainPass.effect.frag.glsl");
+	const rainPassEffect = loadText("/matrix/shaders/glsl/rainPass.effect.frag.glsl");
 	const effectUniforms = {
 		...commonUniforms,
 		...extractEntries(config, ["hasThunder", "rippleScale", "rippleSpeed", "rippleThickness", "loops"]),
@@ -136,8 +136,8 @@ export default ({ regl, config, lkg }) => {
 	const glintMSDF = loadImage(regl, config.glintMSDFURL);
 	const baseTexture = loadImage(regl, config.baseTextureURL, true);
 	const glintTexture = loadImage(regl, config.glintTextureURL, true);
-	const rainPassVert = loadText("shaders/glsl/rainPass.vert.glsl");
-	const rainPassFrag = loadText("shaders/glsl/rainPass.frag.glsl");
+	const rainPassVert = loadText("/matrix/shaders/glsl/rainPass.vert.glsl");
+	const rainPassFrag = loadText("/matrix/shaders/glsl/rainPass.frag.glsl");
 	const output = makePassFBO(regl, config.useHalfFloat);
 	const renderUniforms = {
 		...commonUniforms,

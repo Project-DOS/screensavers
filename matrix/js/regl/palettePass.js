@@ -59,7 +59,7 @@ export default ({ regl, config }, inputs) => {
 	const paletteTex = makePalette(regl, config.palette);
 	const { backgroundColor, cursorColor, glintColor, cursorIntensity, glintIntensity, ditherMagnitude } = config;
 
-	const palettePassFrag = loadText("shaders/glsl/palettePass.frag.glsl");
+	const palettePassFrag = loadText("/matrix/shaders/glsl/palettePass.frag.glsl");
 
 	const render = regl({
 		frag: regl.prop("frag"),

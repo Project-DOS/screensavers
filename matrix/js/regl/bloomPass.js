@@ -34,7 +34,7 @@ export default ({ regl, config }, inputs) => {
 	const output = makePassFBO(regl, config.useHalfFloat);
 
 	// The high pass restricts the blur to bright things in our input texture.
-	const highPassFrag = loadText("shaders/glsl/bloomPass.highPass.frag.glsl");
+	const highPassFrag = loadText("/matrix/shaders/glsl/bloomPass.highPass.frag.glsl");
 	const highPass = regl({
 		frag: regl.prop("frag"),
 		uniforms: {
@@ -49,7 +49,7 @@ export default ({ regl, config }, inputs) => {
 	// by blurring them all, this basic blur approximates a more complex gaussian:
 	// https://web.archive.org/web/20191124072602/https://software.intel.com/en-us/articles/compute-shader-hdr-and-bloom
 
-	const blurFrag = loadText("shaders/glsl/bloomPass.blur.frag.glsl");
+	const blurFrag = loadText("/matrix/shaders/glsl/bloomPass.blur.frag.glsl");
 	const blur = regl({
 		frag: regl.prop("frag"),
 		uniforms: {
@@ -62,7 +62,7 @@ export default ({ regl, config }, inputs) => {
 	});
 
 	// The pyramid of textures gets flattened (summed) into a final blurry "bloom" texture
-	const combineFrag = loadText("shaders/glsl/bloomPass.combine.frag.glsl");
+	const combineFrag = loadText("/matrix/shaders/glsl/bloomPass.combine.frag.glsl");
 	const combine = regl({
 		frag: regl.prop("frag"),
 		uniforms: {

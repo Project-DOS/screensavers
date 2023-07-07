@@ -15,7 +15,7 @@ window.onclick = (e) => {
 
 export default ({ regl, config, cameraTex, cameraAspectRatio }, inputs) => {
 	const output = makePassFBO(regl, config.useHalfFloat);
-	const mirrorPassFrag = loadText("shaders/glsl/mirrorPass.frag.glsl");
+	const mirrorPassFrag = loadText("/matrix/shaders/glsl/mirrorPass.frag.glsl");
 	const render = regl({
 		frag: regl.prop("frag"),
 		uniforms: {
