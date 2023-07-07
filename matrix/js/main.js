@@ -19,7 +19,9 @@ const isRunningSwiftShader = () => {
 
 document.body.onload = async () => {
 	const urlParams = new URLSearchParams(window.location.search);
-	const config = makeConfig(Object.fromEntries(urlParams.entries()));
+	const config = makeConfig(Object.fromEntries(urlParams.entries()))
+	config.suppressWarnings = true;
+
 	const useWebGPU = (await supportsWebGPU()) && ["webgpu"].includes(config.renderer?.toLowerCase());
 	const solution = import(`./${useWebGPU ? "webgpu" : "regl"}/main.js`);
 
