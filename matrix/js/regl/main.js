@@ -35,7 +35,7 @@ const loadJS = (src) =>
 	});
 
 export default async (canvas, config) => {
-	await Promise.all([loadJS("lib/regl.min.js"), loadJS("lib/gl-matrix.js")]);
+	await Promise.all([loadJS("matrix/lib/regl.min.js"), loadJS("matrix/lib/gl-matrix.js")]);
 
 	const resize = () => {
 		const devicePixelRatio = window.devicePixelRatio ?? 1;
