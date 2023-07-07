@@ -31,4 +31,5 @@ body .btn-src {
 body canvas {
   width: 100vw !important;
   height: 100vh !important;
+  aspect-ratio: 4 / 1 !important;
 }
