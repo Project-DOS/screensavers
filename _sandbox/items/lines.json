@@ -1,0 +1,5 @@
+{
+  "code": "// Utter pants\n#ifdef GL_ES\nprecision mediump float;\n#endif\n\nuniform float time;\nuniform vec2 resolution;\n\nconst float pi=3.141;\n\nvec2 size=resolution;\nfloat scale=1.5;\n\nconst int num=5;\n\nfloat wave(vec2 pos,float angle,float wavelength,float phase)\n{\n\treturn sin(dot(pos,vec2(cos(angle),sin(angle)))*1.0*pi/wavelength+phase);\n}\n\nvoid main()\n{\n\tvec2 pos=gl_FragCoord.xy/scale-size/2.0;\n\tfloat amp=sin(pos.y*0.2+pos.x*0.1+time)+0.0;\n\tfor(int i=0;i\u003cnum;i++)\n\t{\n\t\tfloat angle=float(3*i)*pi/float(num);\n\t\tamp+=0.2/wave(pos,angle,(sin(time)*10.0)+90.0,time*(float(i)*0.45));\n\t\tpos*=.9;\n\t}\n\n\tgl_FragColor=vec4(vec3(amp*sin(pos.x*0.01+time + pos.y*0.01),amp*0.6,amp),1.0);\n}\n",
+  "user": "4f9ff6d",
+  "parent": "/e#100858.0"
+}

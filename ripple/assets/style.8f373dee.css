@@ -1,0 +1,34 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.tp-dfwv {
+  display: none !important;
+}
+
+body .nav-bar{
+display: none !important;
+}
+
+body .sidebar {
+  display: none !important;
+}
+
+body .page-footer {
+  display: none !important;
+}
+
+body .next-and-prev-link {
+  display: none !important;
+}
+
+body .btn-src {
+  display: none !important;
+}
+
+body canvas {
+  width: 100vw !important;
+  height: 100vh !important;
+}
