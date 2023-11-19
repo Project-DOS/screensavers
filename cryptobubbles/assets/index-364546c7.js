@@ -1195,7 +1195,7 @@ function Te(e, t = {}) {
 }
 
 function Ee(e, t) {
-  let link = "/backend/" + e
+  let link = "/cryptobubbles/backend/" + e
   if(e.includes('bubbles1000')) {
     link = 'https://cryptobubbles.net/backend/data/bubbles1000.usd.json'
   }
@@ -2483,7 +2483,7 @@ function Vt() {
   jt.get(t)
     .then((t) => {
       for (const e of t)
-        (e.image = "/backend/" + e.image), (e.nameUpper = e.name.toUpperCase())
+        (e.image = "/cryptobubbles/backend/" + e.image), (e.nameUpper = e.name.toUpperCase())
       at(e), At(Te(t)), Et("loaded")
     })
     .catch(() => {
