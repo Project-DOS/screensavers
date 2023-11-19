@@ -1197,7 +1197,7 @@ function Te(e, t = {}) {
 function Ee(e, t) {
   let link = "/cryptobubbles/backend/" + e
   if(e.includes('bubbles1000')) {
-    link = 'https://cryptobubbles.net/backend/data/bubbles1000.usd.json'
+    link = 'https://proxy.dreamos.app/api?url=https://cryptobubbles.net/backend/data/bubbles1000.usd.json'
   }
 
   return fetch(link, t)
