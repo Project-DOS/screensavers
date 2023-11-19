@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#444" />
+    <script type="module" crossorigin src="./assets/index-020d3c14.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/index-364546c7.js" />
+
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        color: #fefefe;
+        background-color: #222;
+        -webkit-tap-highlight-color: transparent;
+        overflow: hidden;
+      }
+
+      .bubble-chart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .bubble-chart canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .bubble-chart .toast {
+        transition-property: opacity, transform;
+        transition-duration: 0.4s;
+        margin: 0 0.5em;
+        pointer-events: none;
+        opacity: 0;
+        transform: scale(0.6);
+      }
+      .bubble-chart .toast.open {
+        opacity: 1;
+        transform: none;
+      }
+
+      #app > * {
+        display: none;
+      }
+
+      #app main {
+        display: block;
+      }
+
+      main > * {
+        display: none;
+      }
+
+      main .bubble-chart {
+        display: block;
+      }
+
+      .bubble-chart * {
+        display: none;
+      }
+
+      .bubble-chart canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="web"></div>
+  </body>
+</html>
