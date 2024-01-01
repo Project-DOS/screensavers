@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      coingecko-coin-heatmap-widget {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <coingecko-coin-heatmap-widget locale="en"></coingecko-coin-heatmap-widget>
+
+    <script>
+      const ele2 = document.querySelector("coingecko-coin-heatmap-widget")
+      if (ele2) ele2.setAttribute("height", window.innerHeight)
+    </script>
+    
+    <script src="https://widgets.coingecko.com/coingecko-coin-heatmap-widget.js"></script>
+
+    <script>
+      const style = document.createElement("style")
+      style.innerHTML = "text, .cg-footer { display: none !important; }"
+
+      const ele = document.querySelector("coingecko-coin-heatmap-widget")
+      if (ele) ele.shadowRoot.appendChild(style)
+    </script>
+  </body>
+</html>
